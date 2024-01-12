@@ -1,0 +1,183 @@
+@import './variable';
+
+.card__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+
+  & label {
+    font-size: 16px;
+    color: $cp_blue;
+    text-transform: uppercase;
+    display: inline-block;
+    letter-spacing: 4px;
+  }
+}
+
+.card {
+  position: relative;
+  width: $width;
+  height: $height;
+  line-height: $height;
+  text-align: center;
+  font-size: 70px;
+  user-select: none;
+  border-radius: $radius;
+  box-shadow: 0px 8px 4px -2px $cn_black;
+}
+
+.card__top,
+.card__bottom {
+  height: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__top {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+  background-color: darken($cn_dark_3, 5%);
+}
+
+.card__bottom {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+  background-color: $cn_dark_3;
+}
+
+.digit {
+  font-size: 68px;
+  position: absolute;
+  left: 50%;
+  line-height: 1;
+  color: $cp_red;
+  line-height: calc($height / 2);
+}
+
+.card__top .digit {
+  transform: translateX(-50%) translateY(50%);
+  color: darken($cp_red, 5%);
+}
+
+.card__bottom .digit {
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 200;
+}
+
+.overlay__holder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 500px;
+  background-color: transparent;
+  transform-style: preserve-3d;
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    aspect-ratio: 1/1;
+    background-color: $cn_dark_2;
+    top: 50%;
+    border-radius: 100px;
+    z-index: 100;
+  }
+
+  &::after {
+    right: 0;
+    transform: translateX(50%) translateY(-50%);
+  }
+
+  &::before {
+    left: 0;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.line {
+  height: 1px;
+  width: calc(100% - $radius * 2);
+  position: absolute;
+  background-color: $cn_dark_2;
+  top: 50%;
+  left: $radius;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.flip {
+  overflow: hidden;
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    aspect-ratio: 1/1;
+    background-color: $cn_dark_2;
+    border-radius: 100px;
+    z-index: 100;
+  }
+
+  &::after {
+    right: 0;
+    transform: translateX(50%) translateY(-50%);
+  }
+
+  &::before {
+    left: 0;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.card__top.flip {
+  transform: rotateX(0deg);
+  transform-origin: bottom;
+  animation: topToCenter 0.9s ease-in;
+
+  &::after,
+  &::before {
+    top: 100%;
+  }
+}
+
+.card__bottom.flip {
+  transform: rotateX(90deg);
+  animation: centerToBottom 0.9s ease-out;
+  transform-origin: top;
+
+  &::after,
+  &::before {
+    top: 0;
+  }
+}
+
+@keyframes topToCenter {
+  0% {
+    transform: rotateX(0);
+  }
+  50%,
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes centerToBottom {
+  0%,
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}

@@ -1,0 +1,67 @@
+@import 'variable';
+
+.app {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url('../images/bg-stars.svg'), url('../images/pattern-hills.svg');
+  background-repeat: no-repeat;
+  background-color: $cn_dark_2;
+  background-position: top, bottom;
+
+  @media screen and (min-width: 769px) {
+    background-size: 100% auto, 100% auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    background-size: 100% cover, 100% cover;
+  }
+
+  padding: 24px;
+}
+
+.flip__wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding-bottom: 200px;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    scale: 0.6;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (max-width: 500px) {
+    scale: 0.5;
+  }
+}
+
+.title {
+  color: $cn_white;
+  font-size: 18px;
+  letter-spacing: 7px;
+  padding-top: 80px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding-bottom: 32px;
+  line-height: 1;
+
+  & a {
+    line-height: 24px;
+  }
+}

@@ -1,0 +1,29 @@
+@use 'font';
+@import 'variable';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 32px;
+  line-height: 1;
+}
+
+body {
+  font-size: 14px;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+svg,
+path {
+  transition: all 0.4s ease;
+}
+
+svg:hover {
+  path {
+    fill: $cp_red;
+  }
+}
