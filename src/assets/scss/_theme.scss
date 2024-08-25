@@ -1,0 +1,74 @@
+[theme='dark'] {
+  --screen-bg: hsl(223, 37%, 15%);
+  --main-bg: hsl(222, 26%, 31%);
+  --pad-bg: hsl(223, 31%, 20%);
+
+  --key-action-bg: hsl(225, 21%, 49%);
+  --key-action-shadow: hsl(224, 28%, 35%);
+  --key-action-bg-hover: #a2b3e1;
+
+  --key-result-color: #fff;
+  --key-result-bg: hsl(6, 63%, 50%);
+  --key-result-shadow: hsl(6, 70%, 34%);
+  --key-result-bg-hover: #f96c5b;
+
+  --key-btn-text: #484c5e;
+  --key-btn-bg: hsl(30, 25%, 89%);
+  --key-btn-bg-hover: #fff;
+  --key-btn-shadow: hsl(28, 16%, 65%);
+
+  --key-text: hsl(0, 0%, 100%);
+
+  --scroll-bar-bg: rgba(58, 68, 96, 0.5);
+  --scroll-bar-bg-hover: rgba(58, 68, 96, 1);
+}
+
+[theme='light'] {
+  --screen-bg: #eee;
+  --main-bg: #e6e6e6;
+  --pad-bg: hsl(0, 5%, 81%);
+
+  --key-action-bg: hsl(185, 42%, 37%);
+  --key-action-shadow: hsl(185, 58%, 25%);
+  --key-action-bg-hover: #62b5bc;
+
+  --key-result-color: #fff;
+  --key-result-bg: hsl(25, 98%, 40%);
+  --key-result-shadow: hsl(25, 99%, 27%);
+  --key-result-bg-hover: #ff8b38;
+
+  --key-btn-text: #484c5e;
+  --key-btn-bg: #e7e5e1;
+  --key-btn-bg-hover: #fff;
+  --key-btn-shadow: hsl(28, 16%, 65%);
+
+  --key-text: #373730;
+
+  --scroll-bar-bg: rgba(213, 206, 207, 0.5);
+  --scroll-bar-bg-hover: rgba(213, 206, 207, 1);
+}
+
+[theme='contrast'] {
+  --screen-bg: #1e0836;
+  --main-bg: #17062a;
+  --pad-bg: #1d0736;
+
+  --key-action-bg: #56087a;
+  --key-action-shadow: #b61be9;
+  --key-action-bg-hover: #8631b0;
+
+  --key-result-color: #1d0936;
+  --key-result-bg: #00decf;
+  --key-result-shadow: #6dfcf3;
+  --key-result-bg-hover: #94fff9;
+
+  --key-btn-text: #ffe643;
+  --key-btn-bg: #331b4d;
+  --key-btn-bg-hover: #6b34ac;
+  --key-btn-shadow: #802096;
+
+  --key-text: #f7df38;
+
+  --scroll-bar-bg: rgba(86, 8, 122, 0.5);
+  --scroll-bar-bg-hover: rgba(86, 8, 122, 1);
+}
